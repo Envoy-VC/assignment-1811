@@ -24,6 +24,7 @@ const config = {
       },
       colors: {
         brand: 'var(--brand)',
+        brandSecondary: 'var(--brand-secondary)',
         border: 'var(--border)',
         input: 'var(--input)',
         ring: 'var(--ring)',
