@@ -13,7 +13,7 @@ export const login = async () => {
   const res = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: `${env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
+      redirectTo: `${env.NEXT_PUBLIC_DEPLOYED_URL}/auth/callback`,
     },
   });
   if (res.error) {
