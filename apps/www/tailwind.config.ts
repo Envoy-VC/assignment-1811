@@ -23,6 +23,7 @@ const config = {
         display: ['var(--font-display)'],
       },
       colors: {
+        brand: 'var(--brand)',
         border: 'var(--border)',
         input: 'var(--input)',
         ring: 'var(--ring)',
