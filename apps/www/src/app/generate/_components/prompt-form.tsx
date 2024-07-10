@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
+import { generatePickupLines } from '~/lib/mixtral';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { GenerateButton } from '~/components';
@@ -25,18 +27,23 @@ He likes football....`;
 
 export const PromptForm = () => {
   'use no memo';
-  
+
   const [output, setOutput] = useState<string[]>([]);
+  const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const form = useForm<FormType>({
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = (values: FormType) => {
-    console.log(values);
-    setOutput([
-      'Write in a scholarly tone, utilising accurate, authoritative sources and citations. Ensure that your...',
-      'Write in a scholarly tone, utilising accurate, authoritative sources and citations. Ensure that your...',
-    ]);
+  const onSubmit = async (values: FormType) => {
+    try {
+      setIsGenerating(true);
+      const lines = await generatePickupLines(values);
+      setOutput(lines);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsGenerating(false);
+    }
   };
   return (
     <div className='flex w-full flex-col gap-6'>
@@ -54,7 +61,7 @@ export const PromptForm = () => {
               name='description'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className='text-brandSecondary font-display text-2xl'>
+                  <FormLabel className='font-display text-2xl text-brandSecondary'>
                     Tell us about your crush
                   </FormLabel>
                   <FormControl>
@@ -64,7 +71,7 @@ export const PromptForm = () => {
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage className='text-brandSecondary font-display text-lg' />
+                  <FormMessage className='font-display text-lg text-brandSecondary' />
                 </FormItem>
               )}
             />
@@ -73,7 +80,7 @@ export const PromptForm = () => {
               name='style'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className='text-brandSecondary font-display text-2xl'>
+                  <FormLabel className='font-display text-2xl text-brandSecondary'>
                     Style
                   </FormLabel>
                   <FormControl>
@@ -83,11 +90,16 @@ export const PromptForm = () => {
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage className='text-brandSecondary font-display text-lg' />
+                  <FormMessage className='font-display text-lg text-brandSecondary' />
                 </FormItem>
               )}
             />
-            <GenerateButton className='w-full' type='submit' />
+            <GenerateButton
+              className='w-full'
+              disabled={isGenerating}
+              title={isGenerating ? 'Generating...' : undefined}
+              type='submit'
+            />
           </form>
         </Form>
       ) : (
