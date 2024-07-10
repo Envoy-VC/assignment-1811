@@ -5,13 +5,15 @@ import { redirect } from 'next/navigation';
 
 import { createClient } from '~/lib/supabase/server';
 
+import { env } from '~/env';
+
 export const login = async () => {
   const supabase = createClient();
 
   const res = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: `http://localhost:3000/auth/callback`,
+      redirectTo: `${env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
     },
   });
   if (res.error) {
