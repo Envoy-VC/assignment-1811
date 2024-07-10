@@ -19,7 +19,7 @@ const Generate = () => {
         <div className='flex justify-end p-4'>
           <SignOut />
         </div>
-        <div className='w-full max-w-2xl mx-auto px-3'>
+        <div className='mx-auto w-full max-w-2xl px-3'>
           <PromptForm />
         </div>
       </div>

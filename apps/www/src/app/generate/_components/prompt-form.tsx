@@ -27,7 +27,7 @@ export const PromptForm = () => {
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = async (values: FormType) => {
+  const onSubmit = (values: FormType) => {
     console.log(values);
   };
   return (
@@ -45,7 +45,7 @@ export const PromptForm = () => {
             name='description'
             render={({ field }) => (
               <FormItem>
-                <FormLabel className='text-brandSecondary font-display text-2xl'>
+                <FormLabel className='font-display text-2xl text-brandSecondary'>
                   Tell us about your crush
                 </FormLabel>
                 <FormControl>
@@ -55,7 +55,7 @@ export const PromptForm = () => {
                     {...field}
                   />
                 </FormControl>
-                <FormMessage className='text-brandSecondary font-display text-lg' />
+                <FormMessage className='font-display text-lg text-brandSecondary' />
               </FormItem>
             )}
           />
@@ -64,7 +64,7 @@ export const PromptForm = () => {
             name='style'
             render={({ field }) => (
               <FormItem>
-                <FormLabel className='text-brandSecondary font-display text-2xl'>
+                <FormLabel className='font-display text-2xl text-brandSecondary'>
                   Style
                 </FormLabel>
                 <FormControl>
@@ -74,7 +74,7 @@ export const PromptForm = () => {
                     {...field}
                   />
                 </FormControl>
-                <FormMessage className='text-brandSecondary font-display text-lg' />
+                <FormMessage className='font-display text-lg text-brandSecondary' />
               </FormItem>
             )}
           />

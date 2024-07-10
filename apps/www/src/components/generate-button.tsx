@@ -15,7 +15,7 @@ export const GenerateButton = ({
   return (
     <Button
       className={cn(
-        'font-display bg-brand text-2xl flex h-12 items-center gap-5 rounded-full tracking-wide text-white sm:h-16 sm:text-[2rem]',
+        'flex h-12 items-center gap-5 rounded-full bg-brand font-display text-2xl tracking-wide text-white sm:h-16 sm:text-[2rem]',
         className
       )}
       {...props}
