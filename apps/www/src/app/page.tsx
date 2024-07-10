@@ -17,6 +17,12 @@ const Home = () => {
       <div className='absolute right-[51%] top-1/2 translate-x-1/2'>
         <GenerateButton />
       </div>
+      <div className='absolute right-[51%] top-[12%] translate-x-1/2'>
+        <div className='text-center font-display text-4xl leading-[1.2] tracking-wider text-white sm:text-6xl'>
+          Pickup line <br />
+          Generator
+        </div>
+      </div>
     </div>
   );
 };
