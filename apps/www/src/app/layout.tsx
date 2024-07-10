@@ -1,14 +1,20 @@
-import { headers } from 'next/headers';
+import { Grand_Hotel as GrandHotel, Inter } from 'next/font/google';
 
-import { wagmiConfig } from '~/lib/viem';
-
-import { GeistSans } from 'geist/font/sans';
 import type { Metadata } from 'next';
-import { cookieToInitialState } from 'wagmi';
-import { Web3Provider } from '~/providers';
 import '~/styles/globals.css';
 
 import { Toaster } from '~/components/ui/sonner';
+
+const grandHotel = GrandHotel({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-display',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
 
 export const metadata: Metadata = {
   title: 'Create T3 App',
@@ -17,15 +23,10 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
-  const initialState = cookieToInitialState(
-    wagmiConfig,
-    headers().get('cookie')
-  );
-
   return (
     <html lang='en'>
-      <body className={`font-sans ${GeistSans.variable}`}>
-        <Web3Provider initialState={initialState}>{children}</Web3Provider>
+      <body className={`font-sans ${inter.variable} ${grandHotel.variable}`}>
+        {children}
         <Toaster />
       </body>
     </html>

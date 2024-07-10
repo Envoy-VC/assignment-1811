@@ -19,7 +19,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-geist-sans)'],
+        sans: ['var(--font-sans)'],
+        display: ['var(--font-display)'],
       },
       colors: {
         border: 'var(--border)',
