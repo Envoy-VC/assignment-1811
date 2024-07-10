@@ -2,6 +2,8 @@ import Image from 'next/image';
 
 import React from 'react';
 
+import { login } from '~/lib/supabase/server/actions';
+
 import GoogleIcon from 'public/google.svg';
 
 import { Button } from '~/components/ui/button';
@@ -23,18 +25,21 @@ const Login = () => {
             Generate pickup line for your crush now!
           </div>
         </div>
-        <Button
-          className='flex h-12 w-full flex-row items-center gap-3 rounded-full text-base font-semibold'
-          variant='secondary'
-        >
-          <Image
-            alt='Google'
-            height={24}
-            src={GoogleIcon as unknown as string}
-            width={24}
-          />
-          Sign up with google
-        </Button>
+        <form>
+          <Button
+            className='flex h-12 w-full flex-row items-center gap-3 rounded-full text-base font-semibold'
+            formAction={login}
+            variant='secondary'
+          >
+            <Image
+              alt='Google'
+              height={24}
+              src={GoogleIcon as unknown as string}
+              width={24}
+            />
+            Sign up with google
+          </Button>
+        </form>
         <div className='pt-72 text-[14px] font-medium text-neutral-400'>
           By signing up, you agree to the,{' '}
           <span className='cursor-pointer underline'>Terms of Use</span>,

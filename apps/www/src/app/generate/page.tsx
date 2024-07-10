@@ -6,6 +6,8 @@ import BackgroundImage from 'public/background.png';
 
 import { PromptForm, SignOut } from './_components';
 
+export const revalidate = 1;
+
 const Generate = () => {
   return (
     <div className='relative'>

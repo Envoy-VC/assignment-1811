@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 
 import React from 'react';
@@ -17,7 +19,7 @@ interface PromptOutputProps {
 export const PromptOutput = ({ lines, setOutput }: PromptOutputProps) => {
   return (
     <div className='flex flex-col gap-8'>
-      <div className='text-brandSecondary text-center font-display text-2xl tracking-wider'>
+      <div className='text-center font-display text-2xl tracking-wider text-brandSecondary'>
         Copy the below pick up lines
       </div>
       <div className='flex flex-col gap-4'>
@@ -46,7 +48,7 @@ const LineBox = ({ index, line }: LineBoxProps) => {
   return (
     <div className='flex flex-col gap-1 rounded-lg border border-brand p-3 font-display tracking-wider'>
       <div className='flex flex-row items-center justify-between'>
-        <div className='text-brandSecondary text-2xl'>
+        <div className='text-2xl text-brandSecondary'>
           Pickup line {index + 1}
         </div>
         <Button
