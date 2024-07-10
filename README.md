@@ -4,6 +4,10 @@ A simple Pickup Lines Generator using Mistral Large AI Model.
 
 ## Demo Video 🎥
 
+
+https://github.com/Envoy-VC/assignment-1811/assets/65389981/8adc5c9a-0b3f-4017-abef-542ffc422362
+
+
 ## 🧑🏼‍💻 Tech Stack
 
 - Next.js 15 (with React Compiler)
