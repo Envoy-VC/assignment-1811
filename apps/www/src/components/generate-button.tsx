@@ -6,9 +6,12 @@ import { Button } from './ui/button';
 
 import { Heart } from 'lucide-react';
 
-type GenerateButtonProps = ComponentProps<'button'>;
+interface GenerateButtonProps extends ComponentProps<'button'> {
+  title?: string;
+}
 
 export const GenerateButton = ({
+  title = 'Generate one for me',
   className,
   ...props
 }: GenerateButtonProps) => {
@@ -21,7 +24,7 @@ export const GenerateButton = ({
       {...props}
     >
       <Heart fill='#fff' size={16} />
-      Generate one for me
+      {title}
       <Heart fill='#fff' size={16} />
     </Button>
   );
