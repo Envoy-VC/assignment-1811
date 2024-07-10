@@ -40,7 +40,7 @@ const Login = () => {
             Sign up with google
           </Button>
         </form>
-        <div className='pt-72 text-[14px] font-medium text-neutral-400'>
+        <div className='pt-72 text-[14px] font-medium text-neutral-400 text-center'>
           By signing up, you agree to the,{' '}
           <span className='cursor-pointer underline'>Terms of Use</span>,
           <span className='cursor-pointer underline'>Privacy Notice</span>

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { generatePickupLines } from '~/lib/mixtral';
+import { generatePickupLines } from '~/lib/mistral';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
