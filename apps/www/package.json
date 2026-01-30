@@ -48,7 +48,7 @@
     "@typescript-eslint/parser": "^7.12.0",
     "@vercel/style-guide": "^6.0.0",
     "config": "workspace:*",
-    "eslint": "^8.57.0",
+    "eslint": "^9.26.0",
     "postcss": "^8.4.38",
     "prettier": "^3.3.0",
     "prettier-plugin-tailwindcss": "^0.6.1",
